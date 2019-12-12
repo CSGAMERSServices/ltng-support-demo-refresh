@@ -10,11 +10,21 @@
     <masterLabel>Dynamic Header</masterLabel>
     <targetConfigs>
         <targetConfig targets="lightning__AppPage, lightning__HomePage, lightning__RecordPage">
-            <property name="iconGroup" type="String" />
-            <property name="iconName" type="String" />
-            <property name="iconAlternativeText" type="String" />
-            <property name="title" type="String" />
-            <property name="detail" type="String" />
+            <property name="iconGroup" type="String" datasource="standard,action,custom,utility" default="standard"
+                description="The group of the icon (ex: standard, utility, etc)"
+            />
+            <property name="iconName" type="String" default="partners"
+                description="The name of the icon (ex:account or search)"
+            />
+            <property name="iconAlternativeText" type="String" default="Icon"
+                description="The alternative text for screen readers for the icon."
+            />
+            <property name="title" type="String" default=""
+                description="The title of the box"
+            />
+            <property name="detail" type="String" default=""
+                description="The detail text to show beneath the title"
+            />
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

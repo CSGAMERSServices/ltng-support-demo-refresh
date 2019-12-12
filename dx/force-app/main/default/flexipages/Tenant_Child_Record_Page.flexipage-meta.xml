@@ -116,9 +116,6 @@
             <componentName>ltng_DynamicHeader</componentName>
         </componentInstances>
         <componentInstances>
-            <componentName>ltng_TenantRedirector</componentName>
-        </componentInstances>
-        <componentInstances>
             <componentInstanceProperties>
                 <name>decorate</name>
                 <value>true</value>
