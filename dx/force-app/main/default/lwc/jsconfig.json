@@ -2,7 +2,14 @@
     "compilerOptions": {
         "experimentalDecorators": true,
         "baseUrl": ".",
-        "paths": {}
+        "paths": {
+            "c/ltng_TenantRedirector": [
+                "ltng_TenantRedirector/ltng_TenantRedirector.js"
+            ],
+            "c/ltng_DynamicHeader": [
+                "ltng_DynamicHeader/ltng_DynamicHeader.js"
+            ]
+        }
     },
     "include": [
         "**/*",
