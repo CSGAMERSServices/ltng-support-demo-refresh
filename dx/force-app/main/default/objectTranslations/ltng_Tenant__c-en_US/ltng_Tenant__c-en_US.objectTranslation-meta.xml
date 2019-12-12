@@ -19,5 +19,13 @@
             <section>Personal Detail</section>
         </sections>
     </layouts>
+    <quickActions>
+        <label><!-- Update --></label>
+        <name>Update</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Update 2 --></label>
+        <name>Update_2</name>
+    </quickActions>
     <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>

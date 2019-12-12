@@ -27,3 +27,7 @@ package.xml
 **/Account_Record_Page.flexipage
 applications/Account*
 applications/standard_*
+
+**/Policy*
+*Policy*
+*policy*

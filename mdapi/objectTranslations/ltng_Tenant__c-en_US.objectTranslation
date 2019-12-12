@@ -8,7 +8,30 @@
         <plural>true</plural>
         <value>Tenants</value>
     </caseValues>
+    <layouts>
+        <layout>Tennant Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Personal Detail --></label>
+            <section>Personal Detail</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Update --></label>
+        <name>Update</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Update 2 --></label>
+        <name>Update_2</name>
+    </quickActions>
     <startsWith>Consonant</startsWith>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
     <fields>
         <label><!-- First Name --></label>
         <name>First_Name__c</name>
@@ -16,5 +39,14 @@
     <fields>
         <label><!-- Last Name --></label>
         <name>Last_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Note about the person --></help>
+        <label><!-- Note --></label>
+        <name>Note__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>Phone__c</name>
     </fields>
 </CustomObjectTranslation>

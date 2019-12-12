@@ -164,23 +164,28 @@
         <customTabListAdditionalFields>Last_Name__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Phone__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Email__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Note__c</customTabListAdditionalFields>
         <lookupDialogsAdditionalFields>First_Name__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Last_Name__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Phone__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Email__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Note__c</lookupDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>First_Name__c</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Last_Name__c</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Phone__c</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Email__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Note__c</lookupPhoneDialogsAdditionalFields>
         <searchFilterFields>NAME</searchFilterFields>
         <searchFilterFields>First_Name__c</searchFilterFields>
         <searchFilterFields>Last_Name__c</searchFilterFields>
         <searchFilterFields>Phone__c</searchFilterFields>
         <searchFilterFields>Email__c</searchFilterFields>
+        <searchFilterFields>Note__c</searchFilterFields>
         <searchResultsAdditionalFields>First_Name__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Last_Name__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Phone__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Email__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Note__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
@@ -214,6 +219,18 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Note__c</fullName>
+        <description>(Example of something we can update on the person.)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Note about the person</inlineHelpText>
+        <label>Note</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Phone__c</fullName>
         <externalId>false</externalId>
         <label>Phone</label>
@@ -228,6 +245,7 @@
         <fields>Last_Name__c</fields>
         <fields>Phone__c</fields>
         <fields>Email__c</fields>
+        <fields>Note__c</fields>
         <label>Compact</label>
     </compactLayouts>
     <listViews>

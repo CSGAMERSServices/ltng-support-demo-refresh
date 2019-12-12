@@ -1,0 +1,21 @@
+<template>
+    <div class="slds-box slds-theme_default">
+        <div class='slds-p-vertical_x-small'>
+            <p>Hello this is your tenant redirector.</p>
+            <p>Tenant id:{tenantId}</p>
+            <p>Click the following to edit the Tenant</p>
+            <lightning-button label={tenantName} onclick={handleOpenTenant} ></lightning-button>
+        </div>
+        <hr></hr>
+        <lightning-record-form
+            record-id={tenantId}
+            object-api-name="ltng_Tenant__c"
+            columns={columns}
+            mode={mode}
+            layout-type={layout}
+            onload={handleLoad}
+            onsubmit={handleSubmit}
+            onsuccess={handleSuccess}
+        ></lightning-record-form>
+    </div>
+</template>

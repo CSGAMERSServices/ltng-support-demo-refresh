@@ -8,5 +8,34 @@
         <plural>true</plural>
         <value>Tenant Children</value>
     </caseValues>
+    <layouts>
+        <layout>Tenant Child Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
     <startsWith>Consonant</startsWith>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Note on the parent record. --></help>
+        <label><!-- Parent Note --></label>
+        <name>Parent_Note__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tenant --></label>
+        <name>Tenant__c</name>
+        <relationshipLabel><!-- Tenant Children --></relationshipLabel>
+    </fields>
 </CustomObjectTranslation>
