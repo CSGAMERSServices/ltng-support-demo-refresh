@@ -143,45 +143,102 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>Compact</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <enableActivities>true</enableActivities>
+    <description>Some child object related to the Tenant</description>
+    <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableLicensing>false</enableLicensing>
-    <enableReports>true</enableReports>
+    <enableReports>false</enableReports>
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <label>Tenant</label>
+    <label>Tenant Child</label>
     <nameField>
-        <displayFormat>t-{0000000}</displayFormat>
-        <label>Tenant Name</label>
-        <type>AutoNumber</type>
+        <label>Tenant Child Name</label>
+        <type>Text</type>
     </nameField>
-    <pluralLabel>Tenants</pluralLabel>
+    <pluralLabel>Tenant Children</pluralLabel>
     <searchLayouts>
-        <customTabListAdditionalFields>First_Name__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Last_Name__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Phone__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Email__c</customTabListAdditionalFields>
-        <lookupDialogsAdditionalFields>First_Name__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Last_Name__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Phone__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Email__c</lookupDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>First_Name__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Last_Name__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Phone__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Email__c</lookupPhoneDialogsAdditionalFields>
+        <customTabListAdditionalFields>Tenant__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Start_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>End_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Amount__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Tenant__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Start_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>End_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Amount__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Tenant__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Start_Date__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>End_Date__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Amount__c</lookupPhoneDialogsAdditionalFields>
         <searchFilterFields>NAME</searchFilterFields>
-        <searchFilterFields>First_Name__c</searchFilterFields>
-        <searchFilterFields>Last_Name__c</searchFilterFields>
-        <searchFilterFields>Phone__c</searchFilterFields>
-        <searchFilterFields>Email__c</searchFilterFields>
-        <searchResultsAdditionalFields>First_Name__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Last_Name__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Phone__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Email__c</searchResultsAdditionalFields>
+        <searchFilterFields>Tenant__c</searchFilterFields>
+        <searchFilterFields>Start_Date__c</searchFilterFields>
+        <searchFilterFields>End_Date__c</searchFilterFields>
+        <searchFilterFields>Amount__c</searchFilterFields>
+        <searchResultsAdditionalFields>Tenant__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Start_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>End_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Amount__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
+    <fields>
+        <fullName>Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Tenant__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Tenant</label>
+        <referenceTo>ltng_Tenant__c</referenceTo>
+        <relationshipLabel>Tenant Children</relationshipLabel>
+        <relationshipName>Tenant_Children</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <compactLayouts>
+        <fullName>Compact</fullName>
+        <fields>Name</fields>
+        <fields>Tenant__c</fields>
+        <fields>Start_Date__c</fields>
+        <fields>End_Date__c</fields>
+        <fields>Amount__c</fields>
+        <label>Compact</label>
+    </compactLayouts>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Tenant__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>End_Date__c</columns>
+        <columns>Amount__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
 </CustomObject>
