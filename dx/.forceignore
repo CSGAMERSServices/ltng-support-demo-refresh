@@ -23,3 +23,7 @@ package.xml
 *appMenu*
 
 *appSwitch*
+
+**/Account_Record_Page.flexipage
+applications/Account*
+applications/standard_*

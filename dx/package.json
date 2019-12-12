@@ -1,0 +1,23 @@
+{
+  "name": "dx",
+  "version": "1.0.0",
+  "description": "Example project to demonstrate using the LDS in LWC",
+  "scripts": {
+    "lint": "node node_modules/eslint/bin/eslint.js force-app/main/default/",
+    "lint:watch": "node node_modules/eslint-watch/bin/esw --watch force-app/main/default/",
+    "lint:watch:changed": "node node_modules/eslint-watch/bin/esw --watch --changed force-app/main/default/",
+    "test": "node node_modules/@salesforce/lwc-jest/bin/lwc-jest",
+    "test:watch": "node node_modules/@salesforce/lwc-jest/bin/lwc-jest --watch",
+    "test:debug": "node node_modules/@salesforce/lwc-jest/bin/lwc-jest --debug"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@salesforce/eslint-config-lwc": "0.4.0",
+    "@salesforce/lwc-jest": "0.6.2",
+    "eslint": "6.7.2",
+    "eslint-plugin-import": "2.19.1",
+    "eslint-watch": "6.0.1"
+  }
+}

@@ -56,3 +56,11 @@ For details about developing against orgs that don’t have source tracking, see
 Don’t deploy your code to production directly from Visual Studio Code. The deploy and retrieve commands do not support transactional operations, which means that a deployment can fail in a partial state. Also, the deploy and retrieve commands don’t run the tests needed for production deployments. The push and pull commands are disabled for orgs that don’t have source tracking, including production orgs.
 
 Deploy your changes to production using [packaging](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_dev2gp.htm) or by [converting your source](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_force_source.htm#cli_reference_convert) into metadata format and using the [metadata deploy command](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_force_mdapi.htm#cli_reference_deploy).
+
+# Links
+* [Learn Change Data Capture Characteristics](https://trailhead.salesforce.com/en/content/learn/modules/change-data-capture/learn-change-data-capture-characteristics)
+* [Subscribe to Platform Event Notifications in a Lightning Component](https://developer.salesforce.com/docs/atlas.en-us.platform_events.meta/platform_events/platform_events_subscribe_lc.htm)
+* [Keep Your External Data Current with Change Data Capture](https://developer.salesforce.com/docs/atlas.en-us.change_data_capture.meta/change_data_capture/cdc_what.htm)
+* [Use the Wire Service to Get Data](https://developer.salesforce.com/docs/component-library/documentation/lwc/lwc.data_wire_service_about)
+* [Caching and Synchronizing Component Data with Lightning Data Service](https://developer.salesforce.com/blogs/2019/09/caching-and-synchronizing-component-data-with-lightning-data-service.html)
+* [Use the Wire Service to Get Data](https://developer.salesforce.com/docs/component-library/documentation/lwc/data_wire_service_about)
