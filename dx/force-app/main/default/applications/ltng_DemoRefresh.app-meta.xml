@@ -12,16 +12,16 @@
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <label>Demo Refresh</label>
     <navType>Console</navType>
-    <tabs>Demo_Refresh_Home</tabs>
+    <tabs>ltng_DemoRefreshHome</tabs>
     <tabs>standard-Account</tabs>
-    <tabs>ltng_Tennant__c</tabs>
+    <tabs>ltng_Tenant__c</tabs>
     <uiType>Lightning</uiType>
     <workspaceConfig>
         <mappings>
-            <tab>Demo_Refresh_Home</tab>
+            <tab>ltng_DemoRefreshHome</tab>
         </mappings>
         <mappings>
-            <tab>ltng_Tennant__c</tab>
+            <tab>ltng_Tenant__c</tab>
         </mappings>
         <mappings>
             <tab>standard-Account</tab>

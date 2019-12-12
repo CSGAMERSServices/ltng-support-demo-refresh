@@ -152,13 +152,13 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <label>Tennant</label>
+    <label>Tenant</label>
     <nameField>
         <displayFormat>t-{0000000}</displayFormat>
-        <label>Tennant Name</label>
+        <label>Tenant Name</label>
         <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>Tennants</pluralLabel>
+    <pluralLabel>Tenants</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
