@@ -2,5 +2,12 @@
     <div class="slds-box slds-theme_default">
         <p>Hello this is your tenant redirector.</p>
         <p>Tenant id:{tenantId}</p>
+        <lightning-record-form
+            record-id={tenantId}
+            object-api-name="ltng_Tenant__c"
+            columns="2"
+            mode="view"
+            layout-type="Compact"
+        ></lightning-record-form>
     </div>
 </template>
