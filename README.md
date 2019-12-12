@@ -295,96 +295,106 @@ For more information, please see the [Licensing](#licensing) section below
 
 # How to Use
 
-How_do_you_use_this_demo
+(Click below to access the short lived demo)
 
-# TLDR How
+![Access Demo](docs/images/AccessDemo.png)
 
-* Bullet_points_of_how_this_was_done
+Note we have two objects within the `Demo Refresh` application:
+
+* Tenant (base record)
+* Tenant Child (child of Tenant)
+
+From the Child Record, we can access and update information from the parent - while making sure the information is updated on the Parent Tab (even if it is open)
+
+## Option 1 - Update the Lightnign Record Form
+
+![Update from Child Window](docs/images/updateFromChild.gif)
+
+Within the `LDS` tab on the `Tenant Child` record
+- Simply click on the `Edit icon` next to the field (looks like a 'pencil')
+
+Then update the Note of the parent Tenant.
+
+Note that even if the parent Tenant record tab is open, it will remain in sync.
+
+----
+
+This component needs two things to work:
+
+1. The related Tenant Id
+
+2. A [Lightning Data Service comonent](https://developer.salesforce.com/docs/component-library/documentation/lwc/lwc.data_ui_api)
+
+We can determine the related record using the @wire service, buy using the 'recordId' and asking for the Tenant Id.
+
+We then use that TenantId within the [lightning-record-form](https://developer.salesforce.com/docs/component-library/bundle/lightning-record-form/documentation) to show the form.
 
 ---
 
-# Install
+Because we update the record through the lightning-data-form, it will update using the Lightning Data Service - so the parent object's tab will also update.
 
-There are three methods available for you to install this demo, so you can play around with it:
 
-(Please note, all are intended as demonstrations and are not intended for deployment to Production as is)
+## Option 2 - Update with the Edit Form
 
-* [Install via URL](#install-via-url)
-* [Install Demo via Salesforce CLI](#install-via-salesforce-cli)
-* [Install Demo via Ant/Metadata API](#install-via-metadata-api)
+![Update from Edit Screen](docs/images/updateFromEditScreen.gif)
 
-## Install via URL
+Within the `LDS` tab on the `Tenant Child` record
+- simply click the button with the name of the Tenent to open the `Edit Form`.
 
-This works very similar to an App Exchange install.
+Saving the change on the Edit Form will automatically update
+on the child (within the Lightning Record Form) and on the Parent tab.
+(All three remain in sync)
 
-Please login to an available sandbox and click the link below.
+---
 
-@CHANGE: update the link to the installation id (starts with 04t...)
--- ex: /installPackage.apexp?p0=04t6A000002sreiQAA
--- be sure that there are no spaces (it happens...)
+We navigate using the [NavigationMixin](https://developer.salesforce.com/docs/component-library/bundle/lightning-navigation/documentation)
 
-[https://test.salesforce.com/packaging/installPackage.apexp?p0=INSTALL_SF_ID](https://test.salesforce.com/packaging/installPackage.apexp?p0= INSTALL_SF_ID)
+Because this is the standard Edit Screen, we do not have a hook on completion to let the child know to refresh.
 
-(or simply navigate to `https://YOUR_SALESFORCE_INSTANCE/packaging/installPackage.apexp?p0=INSTALL_SF_ID` <br />
-if you are already logged in)
+Yet because we are using the Lightning Data Service in how we access the information, it has the hook automatically to use the latest information from the local cache.
 
-@CHANGE: update image to the install package
+## Option 3 - Update on the parent Tenant
 
-![Install for Admins](docs/images/installPackage.png)
+![Update from Parent Window](docs/images/updateFromParent.gif)
 
-It is recommended to install for Admins Only (but all options will work)
+Within the `Tenant` record, make a change - such as updating the note.
 
-##### Run Demo Setup
+Then navigate back to a related `Tenant Child` record.
 
-Next, click on the 'dice' and open the 'URL Hack Demo' app.
+Note that even without refreshing the screen (or calling a [lightning:refreshView event](https://developer.salesforce.com/docs/component-library/bundle/force:refreshView), the child has been updated using the Lightning Data Service.
 
-@CHANGE: update image to your app in the launcher
+---
 
-![URL Hack Demo App](docs/images/appInLauncher.png)
+Similar to Option 2, Because this is the standard Edit Screen, we do not have a hook on completion to let the child know to refresh.
 
-and run `Setup` from the `Demo Setup` tab.
+Yet because we are using the Lightning Data Service in how we access the information, it has the hook automatically to use the latest information from the local cache.
 
-@CHANGE: update the image to your setup page
+## Option 4 - Update from Related Record
 
-![URL Hack Demo Setup](docs/images/demoSetup1.png)
+![Update from Related Record](docs/images/updateFromRelatedRecord.gif)
 
-This will then perform any additional setup (such as creating records, etc).
+Within the `Related Record` tab on the `Tenant Child` record,
+- Simply click on the `Edit icon` next to the field (looks like a 'pencil')
 
-##### Run the Demos
+Then update the Note of the parent Tenant.
 
-Thats it. See the [How to Use](#how-to-use) section for how to use the app.
+Note that even if the parent Tenant record tab is open, it will remain in sync.
 
-@CHANGE: Remove the `Known Issue` section if record types are not needed,
--- otherwise, make the following changes in this section
+We need two things for this to work:
 
-#### -- Known Issue -- Add the missing permissions on the permission set
+1 A quick action on the object that we have an id for.
 
-If you get an error saying 'This record is not available' (when creating records),
-you are likely affectd by a known issue with Unlocked Package deploys.
+2 Use the standard Related Record component
 
-(This is also mentioned from the Setup page)
+In this case the Tenant object has a quick action that shows the fields we want.
 
-We are working with different teams, but it appears as though the installation works correctly from Salesforce CLI, but requires additional steps from the insllation URL.
+As long as this record has the id of the other record, we can use that id with the Related Record component.
 
-**We appologize for this inconvenience and are working towards correcting it**
+---
 
-**1.** Navigate to the `Demo Setup` page
+The [Related Record component](https://releasenotes.docs.salesforce.com/en-us/spring17/release-notes/rn_forcecom_lab_comp_related_record.htm) also uses the Lightning Data Service behind the scenes.
 
-@CHANGE: update screenshot to exact image within the Setup
-@CHANGE: update the DemoSetup Component to the exact names of the record types needed.
-@CHANGE: update to the exact names of the record types to add
-
-![Dependent Picklist Demo page](docs/images/correctPermissionSet.png)
-
-and click on the link **Add the 'Master', 'Type A' and 'Type B' record types to the permission set'**
-
-This will navigate you to the permission set in your org.
-
-**3.** Click edit and enable the record types for that permission set.
-
-@CHANGE: update screenshot to exactly the the RecordTypes needed.
-
-![Add record types to permission set](docs/images/correctPermissionSet2.png)
+So the information is also shared with the detail on the Tenant Child and on the Tenant - parent record.
 
 ## Installing via the Salesforce CLI
 
@@ -398,10 +408,7 @@ However, the Salesforce CLI can be used with any org and does not require Salesf
 
 **2.** Add the permission set to your user
 
-@CHANGE: Always use permission sets
-- Set the {PermissionSetApiName} to the API name of your Permission Set.
-
-	sfdx force:user:permset:assign -n {PermissionSetApiName} -u [[orgAlias]]
+	sfdx force:user:permset:assign -n ltng_DemoLwcRefreshParticipant -u [[orgAlias]]
 	
 **3.** Upload the data
 
@@ -416,16 +423,6 @@ However, the Salesforce CLI can be used with any org and does not require Salesf
 Thats it. See the [How to Use](#how-to-use) section for how to use the app.
 
 	sfdx force:org:open -u [[orgAlias]]
-
-# Bit more detail...
-
-More_detail_on_how_this_was_done
-
-## Component
-
-What_about_the_component
-
-	sample code
 	
 # Licensing
 
