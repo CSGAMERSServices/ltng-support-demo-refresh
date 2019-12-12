@@ -8,5 +8,16 @@
         <plural>true</plural>
         <value>Tenants</value>
     </caseValues>
+    <layouts>
+        <layout>Tennant Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Personal Detail --></label>
+            <section>Personal Detail</section>
+        </sections>
+    </layouts>
     <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>

@@ -97,6 +97,9 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Start_Date__c</fields>
+        <fields>End_Date__c</fields>
+        <fields>Amount__c</fields>
         <relatedList>ltng_TenantChild__c.Tenant__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
