@@ -13,18 +13,18 @@
     <label>Demo Refresh</label>
     <navType>Console</navType>
     <tabs>ltng_DemoRefreshHome</tabs>
-    <tabs>standard-Account</tabs>
+    <tabs>Policy__c</tabs>
     <tabs>ltng_Tenant__c</tabs>
     <uiType>Lightning</uiType>
     <workspaceConfig>
+        <mappings>
+            <tab>Policy__c</tab>
+        </mappings>
         <mappings>
             <tab>ltng_DemoRefreshHome</tab>
         </mappings>
         <mappings>
             <tab>ltng_Tenant__c</tab>
-        </mappings>
-        <mappings>
-            <tab>standard-Account</tab>
         </mappings>
     </workspaceConfig>
 </CustomApplication>
