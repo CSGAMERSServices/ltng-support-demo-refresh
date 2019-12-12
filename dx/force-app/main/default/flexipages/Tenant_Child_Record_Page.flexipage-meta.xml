@@ -118,6 +118,17 @@
         <componentInstances>
             <componentName>ltng_TenantRedirector</componentName>
         </componentInstances>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>decorate</name>
+                <value>true</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>richTextValue</name>
+                <value>&lt;p&gt;&lt;b style=&quot;font-size: 16px;&quot;&gt;How does this work?&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;This component needs two things to work:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;1. The related Tenant Id&lt;/p&gt;&lt;p&gt;2. A &lt;a href=&quot;https://developer.salesforce.com/docs/component-library/documentation/lwc/lwc.data_ui_api&quot; target=&quot;_blank&quot;&gt;Lightning Data Service comonent&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;We can determine the related record using the @wire service, buy using the &#39;recordId&#39; and asking for the Tenant Id.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;We then use that TenantId within the &lt;a href=&quot;https://developer.salesforce.com/docs/component-library/bundle/lightning-record-form/documentation&quot; target=&quot;_blank&quot;&gt;lightning-record-form&lt;/a&gt; to show the form.&lt;/p&gt;</value>
+            </componentInstanceProperties>
+            <componentName>flexipage:richText</componentName>
+        </componentInstances>
         <name>Facet-034c7a87-2f05-4753-8544-9273d1f11c05</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -159,6 +170,17 @@
                 <value>ltng_Tenant__c.Update</value>
             </componentInstanceProperties>
             <componentName>console:relatedRecord</componentName>
+        </componentInstances>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>decorate</name>
+                <value>true</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>richTextValue</name>
+                <value>&lt;p&gt;&lt;b style=&quot;font-size: 16px;&quot;&gt;How does this work?&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;We need two things for this to work:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;1 A quick action on the object that we have an id for.&lt;/p&gt;&lt;p&gt;2 Use the standard Related Record component&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;In this case the Tenant object has a quick action that shows the fields we want.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;As long as this record has the id of the other record, we can use that id with the Related Record component.&lt;/p&gt;</value>
+            </componentInstanceProperties>
+            <componentName>flexipage:richText</componentName>
         </componentInstances>
         <name>Facet-62f148cc-d508-4e7c-9c51-db392d030cbb</name>
         <type>Facet</type>
