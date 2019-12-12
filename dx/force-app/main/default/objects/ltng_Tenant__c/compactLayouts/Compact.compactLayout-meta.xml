@@ -6,5 +6,6 @@
     <fields>Last_Name__c</fields>
     <fields>Phone__c</fields>
     <fields>Email__c</fields>
+    <fields>Note__c</fields>
     <label>Compact</label>
 </CompactLayout>

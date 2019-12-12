@@ -12,7 +12,9 @@
                 <h1><span class="slds-page-header__title slds-truncate" title={title}>{title}</span></h1>
               </div>
             </div>
-            <p if:true={hasDetail} class="slds-page-header__name-meta">{detail}</p>
+            <p if:true={hasDetail} class="slds-page-header__name-meta">
+                <lightning-formatted-rich-text value={detail}></lightning-formatted-rich-text>
+            </p>
           </div>
         </div>
       </div>
