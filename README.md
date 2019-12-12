@@ -270,6 +270,20 @@ For more information, please see the [Licensing](#licensing) section below
 
 # Demo
 
+Is it possible to make sure that changes on a Parent Record appear updated on a child record.
+
+Whether we make the change from the parent, and see it on the child...
+![Update from Parent Window](docs/images/updateFromParent.gif)
+
+... or whether we change it on the child in a lightning-record-form...
+![Update from Child Window](docs/images/updateFromChild.gif)
+
+... or whether we change it in a new Edit popup...
+![Update from Edit Screen](docs/images/updateFromEditScreen.gif)
+
+With the Lightning Data Service, changes made within the same browser are available to other 'tabs' within Lightning Experience - so we always have the most up to date information.
+
+
 ![Gif Demo](docs/images/demo.gif)
 
 What_the_demo_demonstrates_and_why_we_care
