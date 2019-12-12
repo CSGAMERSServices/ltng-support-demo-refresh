@@ -1,10 +1,9 @@
-/* eslint-disable no-console */
+/* eslint-disable no-console, no-unused-vars */
 /**
  * Component that shows information about the tenant
  * and allows the user to edit
  **/
 import { LightningElement, track, api, wire } from 'lwc';
-import uiRecordAPI from 'lightning/uiRecordApi';
 import { NavigationMixin } from 'lightning/navigation';
 
 import {getRecord} from 'lightning/uiRecordApi';
