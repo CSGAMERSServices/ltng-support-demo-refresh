@@ -46,7 +46,7 @@ Note we have two objects within the `Demo Refresh` application:
 
 From the Child Record, we can access and update information from the parent - while making sure the information is updated on the Parent Tab (even if it is open)
 
-## Option 1 - Update the Lightnign Record Form
+## Option 1 - Update the Lightning Record Form
 
 ![Update from Child Window](docs/images/updateFromChild.gif)
 
@@ -63,9 +63,9 @@ This component needs two things to work:
 
 1. The related Tenant Id
 
-2. A [Lightning Data Service comonent](https://developer.salesforce.com/docs/component-library/documentation/lwc/lwc.data_ui_api)
+2. A [Lightning Data Service component](https://developer.salesforce.com/docs/component-library/documentation/lwc/lwc.data_ui_api)
 
-We can determine the related record using the @wire service, buy using the 'recordId' and asking for the Tenant Id.
+We can determine the related record using the @wire service, by using the 'recordId' and asking for the Tenant Id.
 
 We then use that TenantId within the [lightning-record-form](https://developer.salesforce.com/docs/component-library/bundle/lightning-record-form/documentation) to show the form.
 
@@ -79,7 +79,7 @@ Because we update the record through the lightning-data-form, it will update usi
 ![Update from Edit Screen](docs/images/updateFromEditScreen.gif)
 
 Within the `LDS` tab on the `Tenant Child` record
-- simply click the button with the name of the Tenent to open the `Edit Form`.
+- simply click the button with the name of the Tenant to open the `Edit Form`.
 
 Saving the change on the Edit Form will automatically update
 on the child (within the Lightning Record Form) and on the Parent tab.
