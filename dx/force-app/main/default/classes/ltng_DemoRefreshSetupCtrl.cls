@@ -38,6 +38,29 @@ global with sharing class ltng_DemoRefreshSetupCtrl {
     global static final String RT_NAME = '';
 
     
+    
+    /**
+     * Finds and returns the id of the first record
+     * of a given sobject
+     * @return {Id}
+     **/
+    @AuraEnabled(cacheable=false)
+    global static String findFirstSObject() {
+        String sObjectName = OBJECT_TENANT_CHILD;
+        
+        String query = 'SELECT Id ' +
+            'FROM ' + sObjectName + ' ' +
+            'ORDER BY LastModifiedDate desc limit 1';
+        Id recordId = null;
+
+        try {
+            recordId = Database.query(query).Id;
+        } catch(Exception err){
+            System.debug('could not find any records of type ' + sObjectName);
+        }
+
+        return recordId;
+    }
 
     /**
      * Method called from the Lightning Component to either:
@@ -177,12 +200,14 @@ global with sharing class ltng_DemoRefreshSetupCtrl {
 
         ltng_TenantChild__c[] tenantChildRecords = new ltng_TenantChild__c[]{};
         tenantChildRecords.add(new ltng_TenantChild__c(
+            Name = 'Child A',
             Amount__c = 400,
             Start_Date__c = Date.parse('12/31/2019'),
             End_Date__c = Date.parse('1/1/2019'),
             Tenant__c = tenantRecords[0].Id
         ));
         tenantChildRecords.add(new ltng_TenantChild__c(
+            Name = 'Child B',
             Amount__c = 300,
             Start_Date__c = Date.parse('12/31/2019'),
             End_Date__c = Date.parse('1/1/2019'),

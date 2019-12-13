@@ -15,7 +15,17 @@ import runSetupApex from '@salesforce/apex/ltng_DemoRefreshSetupCtrl.runSetup';
 
 import missingPermissionRedirectionApex from '@salesforce/apex/ltng_DemoRefreshSetupCtrl.getMissingPermissionSetRedirection';
 
+import findFirstObjectApex from '@salesforce/apex/ltng_DemoRefreshSetupCtrl.findFirstSObject';
+
 export default class ltng_demoRefreshSetup extends NavigationMixin(LightningElement) {
+
+  /** Id of the record we should navigate to */
+  @track targetRecordId = '';
+
+  /** whether we have a target record id */
+  @api get hasTargetRecordId() {
+    return this.targetRecordId ? true : false;
+  }
 
   /** whether the setup is currently running */
   @track isRunningSetup = false;
@@ -29,6 +39,7 @@ export default class ltng_demoRefreshSetup extends NavigationMixin(LightningElem
 
   connectedCallback(){
     this.calculateSteps(false);
+    this.checkForFirstRecord();
   }
 
   /** handler for when the user indicates to start running the setup */
@@ -56,6 +67,8 @@ export default class ltng_demoRefreshSetup extends NavigationMixin(LightningElem
       .then(results => {
         this.isRunningSetup = false;
         this.setupSteps = results;
+
+        this.checkForFirstRecord();
       })
       .catch(error => {
         console.error('an error occurred', error);
@@ -71,7 +84,7 @@ export default class ltng_demoRefreshSetup extends NavigationMixin(LightningElem
     missingPermissionRedirectionApex( {} )
       .then(targetAddress => {
         console.log('permission set address:', targetAddress);
-        this.navigateToRecord(targetAddress);
+        this.navigateToURL(targetAddress);
       })
       .catch(error => {
         //-- @TODO: handle error
@@ -81,14 +94,54 @@ export default class ltng_demoRefreshSetup extends NavigationMixin(LightningElem
   }
 
   /**
+   * Check if there is a target record we can navigate to.
+   */
+  checkForFirstRecord() {
+    console.log('checking for the first record');
+    findFirstObjectApex({})
+      .then(targetRecordId => {
+        if (targetRecordId) {
+          this.targetRecordId = targetRecordId;
+        }
+      })
+      .catch(error => {
+        //-- ignore the error
+        console.error('error occurred during checkForFirstRecord');
+        this.error = error;
+      })
+  }
+  
+  /**
+   * Handle when the user clicked viewing the demo record
+   * @param {event} evt 
+   */
+  handleViewDemoRecordClick(evt) {
+    this.navigateToRecord(this.targetRecordId);
+  }
+
+  /**
    * Navigates to a given url
    * @param {string} targetURL
    */
-  navigateToRecord(targetURL) {
+  navigateToURL(targetURL) {
     this[NavigationMixin.Navigate]({
       type: 'standard__webPage',
       attributes: {
         url: targetURL
+      }
+    });
+  }
+
+  /**
+   * Navigates to a given record
+   * @param {string} targetRecordId
+   */
+  navigateToRecord(targetRecordId) {
+    this[NavigationMixin.Navigate]({
+      type: 'standard__recordPage',
+      attributes: {
+        recordId: targetRecordId,
+        actionName: 'view'
       }
     });
   }

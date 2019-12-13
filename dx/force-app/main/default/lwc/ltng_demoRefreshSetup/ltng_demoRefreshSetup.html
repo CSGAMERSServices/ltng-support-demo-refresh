@@ -23,8 +23,15 @@
                     -->
                 </div>
                 <div class="slds-float_right slds-p-right_x-large">
-                    <p>Shall we begin?</p>
-                    <lightning-button variant="brand" label="Setup" onclick={handleSetupClicked}></lightning-button>
+                    <div if:true={hasTargetRecordId}>
+                        <lightning-button variant="brand" label='View Demo Record' onclick={handleViewDemoRecordClick} ></lightning-button>
+                        <p>or</p>
+                        <lightning-button label="Setup" onclick={handleSetupClicked}></lightning-button>
+                    </div>
+                    <div if:false={hasTargetRecordId}>
+                        <p>Shall we begin?</p>
+                        <lightning-button variant="brand" label="Setup" onclick={handleSetupClicked}></lightning-button>
+                    </div>
                 </div>
                 </div>
             </div>

@@ -3,17 +3,17 @@
         "experimentalDecorators": true,
         "baseUrl": ".",
         "paths": {
-            "c/ltng_TenantRedirector": [
-                "ltng_TenantRedirector/ltng_TenantRedirector.js"
-            ],
             "c/ltng_DynamicHeader": [
                 "ltng_DynamicHeader/ltng_DynamicHeader.js"
             ],
-            "c/ltng_demoRefreshSetupItem": [
-                "ltng_demoRefreshSetupItem/ltng_demoRefreshSetupItem.js"
+            "c/ltng_TenantRedirector": [
+                "ltng_TenantRedirector/ltng_TenantRedirector.js"
             ],
             "c/ltng_demoRefreshSetup": [
                 "ltng_demoRefreshSetup/ltng_demoRefreshSetup.js"
+            ],
+            "c/ltng_demoRefreshSetupItem": [
+                "ltng_demoRefreshSetupItem/ltng_demoRefreshSetupItem.js"
             ]
         }
     },

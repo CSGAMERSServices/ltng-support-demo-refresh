@@ -34,7 +34,7 @@ export default class ltng_TenantRedirector extends NavigationMixin(LightningElem
 
   /** name of the tenant record - not needed, but just used as an example */
   get tenantName() {
-    return (!this.tenantRecord || !this.tenantRecord.fields) ? '' : this.tenantRecord.fields.Name.value;
+    return (!this.tenantRecord || !this.tenantRecord.fields) ? '' : 'Tenant: ' + this.tenantRecord.fields.Name.value;
   }
 
   /** Shorthand for the tenant info when it is loaded, just to demonstrate how to use it. */
