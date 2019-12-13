@@ -164,6 +164,38 @@ Thats it. See the [How to Use](#how-to-use) section for how to use the app.
 
 	sfdx force:org:open -u [[orgAlias]]
 	
+# Further Reading
+
+Briefly, Lightning Web Components can get notified if changes are made to the record, but only if it is notified.
+
+Typical ways it can be notified include:
+
+* Lightning Data Service (such as one of its components like - lightning-record-form)
+-- Most likely for your case
+[https://developer.salesforce.com/docs/component-library/documentation/lwc/lwc.data_ui_api](https://developer.salesforce.com/docs/component-library/documentation/lwc/lwc.data_ui_api)
+
+* Lightning Wire Service (but this changes if the fields monitored change, not on any change)
+[https://developer.salesforce.com/docs/component-library/documentation/lwc/data_wire_service_about](https://developer.salesforce.com/docs/component-library/documentation/lwc/data_wire_service_about)
+
+
+* Events (such as the Streaming API or Platform Events) when the record is changed
+[https://developer.salesforce.com/docs/atlas.en-us.platform_events.meta/platform_events/platform_events_subscribe_lc.htm](https://developer.salesforce.com/docs/atlas.en-us.platform_events.meta/platform_events/platform_events_subscribe_lc.htm)
+
+(note that CDC may also help, but would only be useful for users with ViewAll permissions - likely not helpful here)
+[https://trailhead.salesforce.com/en/content/learn/modules/change-data-capture/learn-change-data-capture-characteristics](https://trailhead.salesforce.com/en/content/learn/modules/change-data-capture/learn-change-data-capture-characteristics)
+
+
+* PostMessages (to communicate between tabs and frames) if something else can detect the change
+
+---
+If you are retrieving your data through APEX, note that you may need to either call it again...
+or if you called it through a @wire, you can call 'refreshApex()'
+
+Please also note that data caching can also be at play, and may provide old values.
+
+For more information please see 'Client-Side Caching' here:
+[https://developer.salesforce.com/docs/component-library/documentation/lwc/lwc.apex](https://developer.salesforce.com/docs/component-library/documentation/lwc/lwc.apex)
+	
 # Licensing
 
 Copyright 2018 Salesforce
