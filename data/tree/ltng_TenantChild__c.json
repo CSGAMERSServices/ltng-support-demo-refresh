@@ -1,0 +1,23 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "ltng_TenantChild__c",
+                "referenceId": "ltng_TenantChild__cRef1"
+            },
+            "Amount__c": 400,
+            "Start_Date__c": "2019-12-31",
+            "End_Date__c": "2019-01-01",
+            "Parent_Note__c": "updated via related record"
+        },
+        {
+            "attributes": {
+                "type": "ltng_TenantChild__c",
+                "referenceId": "ltng_TenantChild__cRef2"
+            },
+            "Amount__c": 300,
+            "Start_Date__c": "2019-12-31",
+            "End_Date__c": "2019-01-01"
+        }
+    ]
+}

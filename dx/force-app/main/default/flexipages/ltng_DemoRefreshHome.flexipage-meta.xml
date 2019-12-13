@@ -12,6 +12,9 @@
             </componentInstanceProperties>
             <componentName>flexipage:richText</componentName>
         </componentInstances>
+        <componentInstances>
+            <componentName>ltng_demoRefreshSetup</componentName>
+        </componentInstances>
         <name>main</name>
         <type>Region</type>
     </flexiPageRegions>

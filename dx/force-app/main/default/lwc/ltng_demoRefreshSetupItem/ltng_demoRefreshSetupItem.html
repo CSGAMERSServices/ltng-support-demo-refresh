@@ -1,0 +1,58 @@
+<template>
+        <template if:true={completionStep}>
+            <li>
+                <div class='{timeLineClass}'>
+                    <span class='slds-assistive-text'>Task</span>
+                    <div class="slds-media" style="">
+                        <div class="slds-media__figure">
+                            <button class={expanderClass}
+                                onclick={handleExpansionToggle}
+                                title="Toggle details" aria-controls="call-item-base" aria-expanded="false"
+                            >
+                                <lightning-icon icon-name="utility:switch"
+                                    size="x-small" class="slds-timeline__details-action-icon"
+                                ></lightning-icon>
+                            </button>
+                            <lightning-icon icon-name={iconName} size="small" ></lightning-icon>
+                        </div>
+                        <div class="slds-media__body">
+                            <div class="slds-grid slds-grid_align-spread slds-timeline__trigger">
+                                <div class="slds-grid slds-grid_vertical-align-center slds-truncate_container_75 slds-no-space">
+                                    <h3 class="slds-truncate" title={completionStep.title}>
+                                        <a href="javascript:void(0);">
+                                            <strong>{completionStep.title}</strong>
+                                        </a>
+                                    </h3>
+                                </div>
+                                <div class="slds-timeline__actions slds-timeline__actions_inline">
+                                    <p class="slds-timeline__date">{completionStep.completionDate}</p>
+                                </div>
+                            </div>
+                            <p class="slds-m-horizontal_xx-small">{completionStep.descr}</p>
+                            <template if:true={completionStep.errMsg}>
+                            <div class="slds-grid slds-text-color_error slds-m-top_x-small slds-m-horizontal_xx_small" id="task-item-error">
+                                <lightning-icon icon-name="utility:error" size="xx-small" ></lightning-icon>
+                                <p class="slds-m-left_x-small">{completionStep.errMsg}</p>
+                            </div>
+                            </template>
+                            <article class="slds-box slds-timeline__item_details slds-theme_shade slds-m-top_x-small slds-m-horizontal_xx-small" id="task-item-base" aria-hidden="true">
+                                <template if:true={completionStep.reasoning}>
+                                <div>
+                                    <span class="slds-text-title">Description</span>
+                                    <p class="slds-p-top_x-small">{completionStep.reasoning}</p>
+                                </div>
+                                </template>
+                                
+                                <template if:true={completionStep.seeMore}>
+                                <div>
+                                    <span class="slds-text-title">See More</span>
+                                    <p><a onclick={handleSeeMoreClicked}>{completionStep.seeMoreLabel}</a></p>
+                                </div>
+                                </template>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </template>
+    </template>

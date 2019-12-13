@@ -1,0 +1,27 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "ltng_Tenant__c",
+                "referenceId": "ltng_Tenant__cRef1"
+            },
+            "Name": "t-0000001",
+            "First_Name__c": "Jane",
+            "Last_Name__c": "Doe",
+            "Phone__c": "555-234-5678",
+            "Email__c": "j.doe@example.com",
+            "Note__c": "updated via related record"
+        },
+        {
+            "attributes": {
+                "type": "ltng_Tenant__c",
+                "referenceId": "ltng_Tenant__cRef2"
+            },
+            "Name": "t-0000000",
+            "First_Name__c": "John",
+            "Last_Name__c": "Doe",
+            "Phone__c": "555-123-4567",
+            "Email__c": "jdoe@example.com"
+        }
+    ]
+}

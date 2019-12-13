@@ -1,0 +1,1 @@
+select Name, First_Name__c, Last_Name__c, Phone__c, Email__c, Note__c from ltng_Tenant__c

@@ -1,0 +1,2 @@
+select Tenant__c, Amount__c, Start_Date__c, End_Date__c, Parent_Note__c from ltng_TenantChild__c
+
